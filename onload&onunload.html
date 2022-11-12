@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>onload dan onunload</title>
+</head>
+<body onload="promptName()">
+</body>
+<script>
+    function promptName()
+        {
+            var userName = prompt("Siapa nama Anda ?", "")
+            return userName;
+        }
+
+        function goodBye()
+        {
+            alert("Selamat Tinggal, " + promptName() + "!");
+        }
+
+        window.onunload = goodBye();
+</script>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OnError</title>
+    <style>
+        button {
+            display: flex;
+            margin: 10px;
+            border-radius: 10px;
+        }
+        body {
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <button id="change-image-button">Ubah e gambar yg tidak valid</button>
+        <img src=https://media.tenor.com/AdZkAyWcC9UAAAAM/itachi-itachi-uchiha.gif alt='' id='target-image'>
+    </div>
+</body>
+<script>
+    const targetImage = document.getElementById("target-image");
+
+    document.getElementById("change-image-button").onclick = () => {
+    targetImage.src = "invalid image";
+};
+
+    targetImage.onerror = () => {
+    console.log("onerror called");
+    targetImage.onerror = null;
+    targetImage.outerHTML = "<div>Gambar Invalid!</div>";
+};
+</script>
+</html>
